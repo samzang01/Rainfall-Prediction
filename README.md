@@ -12,7 +12,7 @@ Rainfall is one of the most complex and difficult elements of the hydrology cycl
 
 Rainfall is one of the most complex and difficult elements of the hydrology cycle to understand and model due to the complexity of the atmospheric processes that generate rainfall and the tremendous range of variation over a wide range of scales both in space and time. Heavy rainfall prediction is a major problem for the meteorological department as it is closely associated with the economy and life of humans. It is a cause of natural disasters like floods and drought which are encountered by people across the globe every year. Accuracy of rainfall forecasting is important for countries like Bhutan whose economy is largely dependent on hydro-power projects and agriculture. Due to the dynamic nature of the atmosphere, Statistical techniques fail to provide good accuracy for rainfall forecasting. Thus, accurate rainfall prediction is one of the greatest challenges in operational hydrology. On a worldwide scale, different researchers have made numerous attempts to predict rainfall accurately using various techniques. However, due to the nonlinear nature of rainfall, the prediction accuracy obtained by these techniques is still below the satisfactory level.
 
-** Aim**
+**Aim**
 
 This project aims to develop an accurate and efficient rainfall prediction system for various parts of Bhutan using machine learning techniques.
 
