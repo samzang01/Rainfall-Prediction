@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rainfall Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #f5f7fa;
+        }
+        .card {
+            border-radius: 1rem;
+        }
+        .card-header {
+            border-radius: 1rem 1rem 0 0;
+        }
+        .result-box {
+            border-radius: 0.5rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rainfall Prediction System</a>
+        </div>
+    </nav>
+
+    <!-- Main container -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h4 class="mb-0">Enter Weather Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/predict" method="POST">
+                            <div class="mb-3">
+                                <label for="location" class="form-label">Location</label>
+                                <select class="form-select" name="location" id="location" required>
+                                    <option value="">-- Select Location --</option>
+                                    <option value="Chamkhar">Chamkhar</option>
+                                    <option value="Deothang">Deothang</option>
+                                    <option value="Haa">Haa</option>
+                                    <option value="Kanglung">Kanglung</option>
+                                    <option value="Mongar">Mongar</option>
+                                    <option value="Paro">Paro</option>
+                                    <option value="Pemagatshel">Pemagatshel</option>
+                                    <option value="Punakha">Punakha</option>
+                                    <option value="Tashiyangtse">Tashiyangtse</option>
+                                    <option value="simkotha">simkotha</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="year" class="form-label">Year</label>
+                                <input type="number" class="form-control" name="year" id="year" min="2000" max="2100" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="month" class="form-label">Month</label>
+                                <input type="number" class="form-control" name="month" id="month" min="1" max="12" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="tmax" class="form-label">Temperature Max (°C)</label>
+                                <input type="number" step="0.1" class="form-control" name="tmax" id="tmax" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="tmin" class="form-label">Temperature Min (°C)</label>
+                                <input type="number" step="0.1" class="form-control" name="tmin" id="tmin" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="rh" class="form-label">Relative Humidity (%)</label>
+                                <input type="number" step="0.1" class="form-control" name="rh" id="rh" min="0" max="100" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="windspeed" class="form-label">Wind Speed (km/h)</label>
+                                <input type="number" step="0.1" class="form-control" name="windspeed" id="windspeed" required />
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success">Predict Rainfall</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                {# {% if prediction_result %} #}
+                <div class="alert alert-info text-center mt-4 result-box">
+                    {{ prediction_result }}
+                </div>
+                {# {% endif %} #}
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
